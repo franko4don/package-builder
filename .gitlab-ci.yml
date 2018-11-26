@@ -9,11 +9,11 @@ build:
         - cd /var/www/
         - sudo su www-data -s /bin/bash
         - if [ ! -f citest ]; then
-              echo -e $GITLAB_PASSWORD | git clone https://gitlab.com/franko4don/citest.git
+              git clone git@gitlab.com:franko4don/citest.git
           fi
 
         - if [ -f citest ]; then
-              echo -e $GITLAB_PASSWORD | git pull https://gitlab.com/franko4don/citest.git
+              git pull git@gitlab.com:franko4don/citest.git
           fi
         - exit
         - cd /var/www/citest
