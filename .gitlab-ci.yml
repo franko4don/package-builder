@@ -4,7 +4,7 @@ stages:
 build:
     stage: build
     script:
-        - echo -e $BLUEBECKS_PASSWORD | ssh -t -t root@144.217.241.43
+        - echo -e $BLUEBECKS_PASSWORD | ssh -t -t -o StrictHostKeyChecking=no root@144.217.241.43
         - cd /var/www/
         - su www-data -s /bin/bash
         - if [ ! -f citest ]; then
