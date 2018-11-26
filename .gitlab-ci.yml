@@ -1,0 +1,24 @@
+stages:
+    - build
+    
+build:
+    stage: build
+    script:
+        - echo -e $BLUEBECKS_PASSWORD | ssh root@144.217.241.43
+        - cd /var/www/
+        - su www-data -s /bin/bash
+        - if [ ! -f citest ]; then
+              echo -e $GITLAB_PASSWORD | git clone https://gitlab.com/franko4don/citest.git
+          fi
+
+        - if [ -f citest ]; then
+              echo -e $GITLAB_PASSWORD | git pull https://gitlab.com/franko4don/citest.git
+          fi
+        - exit
+        - cd /var/www/citest
+        - composer install
+        - if [ ! -f /home/admin/conf/web/citest.conf ]; then
+              cp citest.conf /home/admin/conf/web/citest.conf && service nginx restart && certbot --nginx -d citest.bluebecks.com
+          fi
+        - exit
+        
