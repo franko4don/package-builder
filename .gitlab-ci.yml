@@ -5,8 +5,9 @@ build:
     stage: build
     script:
         - echo -e $BLUEBECKS_PASSWORD | ssh -t -t -o StrictHostKeyChecking=no root@144.217.241.43
+        - ls
         - cd /var/www/
-        - su www-data -s /bin/bash
+        - sudo su www-data -s /bin/bash
         - if [ ! -f citest ]; then
               echo -e $GITLAB_PASSWORD | git clone https://gitlab.com/franko4don/citest.git
           fi
