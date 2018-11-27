@@ -8,7 +8,8 @@ build:
         - mkdir -p ~/.ssh
         - echo -e $BLUEBECKS_KEY > ~/.ssh/id_rsa.pub
         - chmod 600 ~/.ssh/id_rsa.pub
-        - ssh -t -t -o StrictHostKeyChecking=no root@144.217.241.43
+        - echo -e "Host \n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config 
+        - ssh root@144.217.241.43
         - ls
         - cd /var/www/
         - sudo su www-data -s /bin/bash
