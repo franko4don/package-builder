@@ -13,8 +13,6 @@ build:
         - ssh -t -t root@144.217.241.43
             "cd /var/www &&
             git clone git@gitlab.com:franko4don/citest.git &&
-            exit &&
-            cd /var/www/citest &&
             composer install &&
             cp citest.conf /home/admin/conf/web/citest.conf &&
             service nginx restart &&
