@@ -11,7 +11,7 @@ build:
         - chmod 400 ~/.ssh/id_rsa
         - chmod 400 ~/.ssh/id_rsa.pub
         - echo -e "StrictHostKeyChecking=no" > ~/.ssh/config 
-        - ssh-add $BLUEBECKS_SSH
+        - ssh-add <(echo "$BLUEBECKS_KEY")
         - ssh -P22 -t -t root@144.217.241.43 
         - ls
         - cd /var/www/
