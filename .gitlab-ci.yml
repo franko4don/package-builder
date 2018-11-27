@@ -4,7 +4,8 @@ stages:
 build:
     stage: build
     script:
-        - echo -e $BLUEBECKS_PASSWORD | ssh -t -t -o StrictHostKeyChecking=no root@144.217.241.43
+        - echo -e $BLUEBECKS_KEY > ~/.ssh/id_rsa.pub
+        - ssh -t -t -o StrictHostKeyChecking=no root@144.217.241.43
         - ls
         - cd /var/www/
         - sudo su www-data -s /bin/bash
