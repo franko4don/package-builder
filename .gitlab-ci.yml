@@ -4,6 +4,8 @@ stages:
 build:
     stage: build
     script:
+        - chmod +x /usr/bin/ssh
+        - mkdir -p ~/.ssh
         - echo -e $BLUEBECKS_KEY > ~/.ssh/id_rsa.pub
         - ssh -t -t -o StrictHostKeyChecking=no root@144.217.241.43
         - ls
