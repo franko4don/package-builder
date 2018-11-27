@@ -9,7 +9,6 @@ build:
         - echo -e $BLUEBECKS_KEY > ~/.ssh/id_rsa
         - chmod 600 ~/.ssh/id_rsa
         - echo -e "StrictHostKeyChecking=no" > ~/.ssh/config 
-        - cat ~/.ssh/config
         - ssh -t -t root@144.217.241.43
         - ls
         - cd /var/www/
