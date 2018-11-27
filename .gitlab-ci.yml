@@ -7,7 +7,9 @@ build:
         - chmod +x /usr/bin/ssh
         - mkdir -p ~/.ssh
         - echo -e $BLUEBECKS_KEY > ~/.ssh/id_rsa
+        - echo -e ssh-keygen -y -f $BLUEBECKS_KEY > ~/.ssh/id_rsa.pub
         - chmod 400 ~/.ssh/id_rsa
+        - chmod 400 ~/.ssh/id_rsa.pub
         - echo -e "StrictHostKeyChecking=no" > ~/.ssh/config 
         - ssh -t -t root@144.217.241.43 
         - ls
