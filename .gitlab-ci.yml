@@ -10,4 +10,4 @@ build:
         - ssh-add <(echo "$BLUEBECKS_KEY")
         - mkdir -p ~/.ssh
         - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
-        - ssh -t -t root@144.217.241.43 "cd /var/www && su www-data -s /bin/bash && if [ ! -f citest ]; then git clone git@gitlab.com:franko4don/citest.git else git pull git@gitlab.com:franko4don/citest.git fi && exit && cd /var/www/citest && composer install && if [ ! -f /home/admin/conf/web/citest.conf ]; then cp citest.conf /home/admin/conf/web/citest.conf && service nginx restart && certbot --nginx -d citest.bluebecks.com fi && exit"
+        - ssh -t -t root@144.217.241.43 "cd /var/www && su www-data -s /bin/bash && git clone git@gitlab.com:franko4don/citest.git && exit && cd /var/www/citest && composer install && cp citest.conf /home/admin/conf/web/citest.conf && service nginx restart && certbot --nginx -d citest.bluebecks.com && exit"
