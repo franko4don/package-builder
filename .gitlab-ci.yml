@@ -7,6 +7,7 @@ build:
         - chmod +x /usr/bin/ssh
         - mkdir -p ~/.ssh
         - echo -e $BLUEBECKS_KEY > ~/.ssh/id_rsa.pub
+        - chmod 600 ~/.ssh/id_rsa.pub
         - ssh -t -t -o StrictHostKeyChecking=no root@144.217.241.43
         - ls
         - cd /var/www/
