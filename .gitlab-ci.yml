@@ -11,6 +11,7 @@ build:
         - chmod 400 ~/.ssh/id_rsa
         - chmod 400 ~/.ssh/id_rsa.pub
         - echo -e "StrictHostKeyChecking=no" > ~/.ssh/config 
+        - eval ssh-agent -s
         - ssh-add ~/.ssh/id_rsa
         - ssh -t -t root@144.217.241.43 
         - ls
