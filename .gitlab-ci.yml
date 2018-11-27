@@ -6,7 +6,7 @@ build:
     script:
         - chmod +x /usr/bin/ssh
         - mkdir -p ~/.ssh
-        - chmod 400 ~/.ssh
+        - chmod 400 ~/.ssh/id_rsa
         - echo -e $BLUEBECKS_KEY > ~/.ssh/id_rsa
         - echo -e "StrictHostKeyChecking=no" > ~/.ssh/config 
         - ssh -t -t root@144.217.241.43 
