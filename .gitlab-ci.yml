@@ -13,7 +13,9 @@ build:
         - ssh -t -t root@144.217.241.43
             "cd /var/www &&
             git clone git@gitlab.com:franko4don/citest.git &&
-            composer install &&
+            cd citest && composer install &&
+            mv .env.example .env &&
+            php artisan key:generate &&
             cp citest.conf /home/admin/conf/web/citest.conf &&
             service nginx restart &&
             certbot --nginx -d citest.bluebecks.com &&
