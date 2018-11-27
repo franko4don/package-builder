@@ -9,7 +9,7 @@ build:
         - echo -e $BLUEBECKS_KEY > ~/.ssh/id_rsa.pub
         - chmod 600 ~/.ssh/id_rsa.pub
         - echo -e "Host \n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config 
-        - ssh -t -t -o root@144.217.241.43
+        - ssh -t -t root@144.217.241.43
         - ls
         - cd /var/www/
         - sudo su www-data -s /bin/bash
