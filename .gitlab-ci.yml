@@ -8,8 +8,6 @@ build:
         - mkdir -p ~/.ssh
         - echo -e $BLUEBECKS_KEY > ~/.ssh/id_rsa
         - ssh-keygen -y -f ~/.ssh/id_rsa > ~/.ssh/id_rsa
-        - chmod 400 ~/.ssh/id_rsa
-        - chmod 400 ~/.ssh/id_rsa.pub
         - echo -e "StrictHostKeyChecking=no" > ~/.ssh/config 
         - ssh -t -t root@144.217.241.43 
         - ls
