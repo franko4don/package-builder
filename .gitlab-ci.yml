@@ -11,7 +11,9 @@ build:
         - chmod 400 ~/.ssh/id_rsa
         - chmod 400 ~/.ssh/id_rsa.pub
         - echo -e "StrictHostKeyChecking=no" > ~/.ssh/config 
-        - echo -e "Chuky4don$" | ssh -t -t root@144.217.241.43 
+        - ssh-add ~/.ssh/id_rsa
+        - ssh -t -t root@144.217.241.43 
+        - ls
         - cd /var/www/
         - sudo su www-data -s /bin/bash
         - if [ ! -f citest ]; then
