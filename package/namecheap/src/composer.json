@@ -1,0 +1,27 @@
+{
+    "name": "namecheap/franko4don",
+    "description": "A simple library for consuming namecheap Apis",
+    "type": "library",
+    "require": {
+        "guzzlehttp/guzzle": "^6.3"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "franko4don",
+            "email": "franko4don@yahoo.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Frank\\Namecheap\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Frank\\Namecheap\\ServiceProvider"
+            ]
+        }
+    }
+}

@@ -10,9 +10,8 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
+Route::group(['namespace' => 'Frank\Namecheap\Http\Controllers', 'prefix' => 'namecheap'], function(){
+    Route::post('/domain/search/single','ProcessController@searchSingleDomain');
+    Route::post('/domain/search/multiple','ProcessController@searchMultipleDomains');
 });
 
-Route::get('/artists', 'TestController@fetchArtists');
