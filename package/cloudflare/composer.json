@@ -20,7 +20,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Frank\\Cloudflare\\ServiceProvider"
+                "Frank\\Cloudflare\\CloudflareServiceProvider"
             ]
         }
     }

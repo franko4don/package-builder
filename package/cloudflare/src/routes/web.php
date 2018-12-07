@@ -11,10 +11,12 @@
 |
 */
 Route::group(['namespace' => 'Frank\Cloudflare\Http\Controllers', 'prefix' => 'cloudflare'], function(){
-    Route::post('/domain/search/single','ProcessController@searchSingleDomain');
-    Route::get('/','ProcessController@test');
-    Route::get('/sites','ProcessController@getMySites');
-    Route::post('/addsite','ProcessController@addSite');
-    Route::post('/domain/search/multiple','ProcessController@searchMultipleDomains');
+    Route::get('/dns/{zone}','DNSController@getDNSRecordsForZone');
+    Route::post('/dns/{zone}','DNSController@createDNSRecordForZone');
+    Route::post('/addzone','ZoneController@addZone');
+    Route::get('/zones','ZoneController@getMyZones');
+    
+    Route::get('/user/account','UserController@getUserAccount');
+    
 });
 
