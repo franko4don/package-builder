@@ -13,5 +13,6 @@
 Route::group(['namespace' => 'Frank\Namecheap\Http\Controllers', 'prefix' => 'namecheap'], function(){
     Route::post('/domain/search/single','ProcessController@searchSingleDomain');
     Route::post('/domain/search/multiple','ProcessController@searchMultipleDomains');
+    Route::post('/domain/getinfo','ProcessController@getDomainInfo');
 });
 
